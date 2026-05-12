@@ -7,7 +7,7 @@ export const useRecentFlows = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch('http://localhost:8000/recentflows');
+        const res = await fetch('https://project-manager-server-wev3.onrender.com/recentflows');
         const json = await res.json();
         setData(json);
       } finally {

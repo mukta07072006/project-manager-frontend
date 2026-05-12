@@ -1,7 +1,34 @@
+'use client'
+import { redirect } from "next/navigation"
+import { useState } from "react";
+import { authClient } from "./lib/auth-client";
+
 export default function Home() {
+
+  const [isHome , setIsHome]= useState(true)
+
+  const {
+            data: session,
+            isPending, //loading state
+            refetch
+        } = authClient.useSession()
+  
+  
+        if (!session){
+          redirect('/signin')
+      }
+      else {
+        redirect('/dashboard')
+      }
+
+
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      
-    </div>
+
+    
+    <>
+    
+    
+    </>
   );
 }

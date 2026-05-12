@@ -9,11 +9,12 @@ import {
   ArrowRight 
 } from '@gravity-ui/icons';
 import { authClient, signIn, signUp } from '@/app/lib/auth-client';
+import { useRouter } from 'next/navigation';
 
 
 const RegistrationForm = () => {
 
-    // const router = useRouter();
+    const router = useRouter();
 
 
     // const {

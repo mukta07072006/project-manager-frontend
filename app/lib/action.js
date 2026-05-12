@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const deleteUser = async(userId) => {
-    const res = await fetch(`http://localhost:8000/recentflows/${userId}`, {
+    const res = await fetch(`https://project-manager-server-wev3.onrender.com/recentflows/${userId}`, {
         method: 'DELETE'
     });
     const data = await res.json()
@@ -16,7 +16,7 @@ export const deleteUser = async(userId) => {
 
 export const addtask = async(FormData)=>{
     const newTask = Object.fromEntries(FormData.entries())
-    const res = await fetch('http://localhost:8000/recentflows' , {
+    const res = await fetch('https://project-manager-server-wev3.onrender.com/recentflows' , {
         method: 'POST',
         headers: {
             'content-type' : 'application/json'
